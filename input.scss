@@ -67,12 +67,13 @@ button:hover {
 }
 
 .ip-result-container>div {
-    padding: 15px;
+    padding: 20px 15px 0 15px;
 }
 .ip-result-container>div p {
-    font-size: 10px;
     color: $dark-gray;
+    font-size: 10px;
     font-weight: $medium-weight;
+    padding-bottom: 5px;
 }
 .ip-result-container>span {
     font-size: $medium-font-size;
