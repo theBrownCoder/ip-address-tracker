@@ -29,7 +29,7 @@ button {
     background: $very-dark-gray;
     color: $snow;
     width: 10%;
-    height: 45px;
+    height: 55px;
     border-radius: 0 10px 10px 0;
     cursor: pointer;
 }
@@ -40,7 +40,6 @@ button:hover {
 
 .container {
     background: url("images/pattern-bg.png");
-    border: 2px red solid;
     height: 300px;
     width: 100%;
     text-align: center;
@@ -96,7 +95,7 @@ button:hover {
 }
 
 .search-container>input {
-    height: 45px;
+    height: 55px;
     width: 70%;
     border-radius: 10px 0 0 10px;
     padding: 14px 40px;
