@@ -25,7 +25,7 @@ button:hover {
 }
 
 .container {
-  background: url("/images/pattern-bg.png");
+  background: url("images/pattern-bg.png");
   border: 2px red solid;
   height: 300px;
   width: 100%;
