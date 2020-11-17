@@ -12,7 +12,7 @@ body {
 }
 
 button {
-  background: #2b2b2b;
+  background: black;
   color: #fffafe;
   width: 10%;
   height: 55px;
@@ -26,6 +26,7 @@ button:hover {
 
 .container {
   background: url("images/pattern-bg.png");
+  background-size: 100%;
   height: 300px;
   width: 100%;
   text-align: center;
@@ -40,6 +41,8 @@ button:hover {
 
 .ip-result-container {
   background: #fffafe;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(86, 88, 87, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(86, 88, 87, 0);
   border-radius: 10px;
   margin: 0 auto;
   min-height: 300px;
@@ -88,6 +91,45 @@ button:hover {
   border-radius: 10px 0 0 10px;
   padding: 14px 40px;
   background-color: #fffafe;
+}
+
+@media screen and (min-width: 1440px) {
+  button {
+    width: 5%;
+  }
+
+  .divider {
+    background: url(images/divider.png) no-repeat center;
+    content: "";
+    height: 70px;
+    width: 1px;
+  }
+
+  .ip-parameter {
+    height: 80px;
+  }
+
+  .ip-result-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    min-height: 150px;
+    margin-top: 80px;
+  }
+
+  .ip-result-container > div p {
+    font-size: 15px;
+  }
+
+  .ip-result-container > div span {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .search-container > input {
+    width: 30%;
+  }
 }
 
 /*# sourceMappingURL=output.css.map */
