@@ -55,7 +55,7 @@
       <div class="search-container">
         <input type="search"
                name="ip-searchbar"
-               maxlength="15"
+               maxlength="15" placeholder="Search for any IP address or domain"
                id="ip-search"><button type="submit">&gt;</button>
       </div>
     </div>
@@ -64,20 +64,24 @@
     <script src="index.js"></script>
   </div>
   <div class="ip-result-container">
-    <div>
-      <p>IP Address</p>
+    <div class="ip-parameter">
+      <p>IP ADDRESS</p>
       <span>192.212.174.101</span>
+     
     </div>
-    <div>
-      <p>Location</p>
+     <div class="divider"></div>
+    <div class="ip-parameter">
+      <p>LOCATION</p>
       <span>Brooklyn, NY 10001</span>
     </div>
-    <div>
-      <p>Timezone</p>
+    <div class="divider"></div>
+    <div class="ip-parameter">
+      <p>TIMEZONE</p>
       <span>UTC - 05:00
         <!-- add offset value dynamically using the API --></span>
     </div>
-    <div>
+    <div class="divider"></div>
+    <div class="ip-parameter">
       <p>ISP</p>
       <span>SpaceX Starlink</span>
     </div>
