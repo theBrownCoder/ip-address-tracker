@@ -45,6 +45,9 @@
         href="output.css">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
         rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+          integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+          crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -53,10 +56,12 @@
       <h1>IP Address Tracker</h1>
       <!-- Search for any IP address or domain -->
       <div class="search-container">
-        <input type="search"
-               name="ip-searchbar"
-               maxlength="15" placeholder="Search for any IP address or domain"
-               id="ip-search"><button type="submit">&gt;</button>
+        <input type="text"
+               name="ip-search-bar"
+               maxlength="15"
+               placeholder="Search for any IP address or domain"
+               id="search-bar"><button type="submit"
+                id="search-btn" onclick="getIP()">&gt;</button>
       </div>
     </div>
     <!--end of container-->
@@ -66,27 +71,31 @@
   <div class="ip-result-container">
     <div class="ip-parameter">
       <p>IP ADDRESS</p>
-      <span>192.212.174.101</span>
-     
+      <!-- Get IP address from searchbox -->
+      <span id="ip-address"></span>
     </div>
-     <div class="divider"></div>
+    <div class="divider"></div>
     <div class="ip-parameter">
       <p>LOCATION</p>
-      <span>Brooklyn, NY 10001</span>
+      <!-- Get location.city, location.region, location.postalCode-->
+      <span id="ip-location"></span>
     </div>
     <div class="divider"></div>
     <div class="ip-parameter">
       <p>TIMEZONE</p>
-      <span>UTC - 05:00
-        <!-- add offset value dynamically using the API --></span>
+      <!-- Get location.timezone "UTC - +timezone" -->
+      <span id="ip-timezone"></span>
     </div>
     <div class="divider"></div>
     <div class="ip-parameter">
+      <!-- Get ISP -->
       <p>ISP</p>
-      <span>SpaceX Starlink</span>
+      <span id="ip-isp"></span>
     </div>
+
   </div>
   <!--end ip-result-->
+
 </body>
 
 <footer>
@@ -96,5 +105,6 @@
     Coded by <a href="https://linkedin.com/in/mrdameonwilson">Dameon Wilson</a>.
   </div>
 </footer>
+<script src="ip-results.js"></script>
 
 </html>
