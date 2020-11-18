@@ -9,12 +9,3 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoidGhlYnJvd25jb2RlciIsImEiOiJja2hrcHU5ZW0weHpzMnNzZHpzMndod2lzIn0.V7fT7FU9IeBJvvrMxFydvQ'
 }).addTo(mymap);
-
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(mymap);
-}
-
-mymap.on('click', onMapClick);
