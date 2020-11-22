@@ -14,16 +14,17 @@ let ip_isp = document.getElementById("ip-isp");
 let ip_location = document.getElementById("ip-location");
 
 // Initialize the map with the location marker
-var mymap = L.map('mapid').setView([1, 1], 13);
+var mymap = L.map('mapid').setView([38.90720, -77.03690], 13);
 var leafletIcon = L.icon({
     iconUrl: 'images/icon-location.svg',
     iconSize: [32, 48],
     iconAnchor: [24, 47],
 })
 
-var ip_lat = 0;
-var ip_lng = 0;
+var ip_lat = 0; // Represents latitude
+var ip_lng = 0; // Represents longitude
 
+// Creates the map tiles
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -39,6 +40,7 @@ function getIP() {
     var ip_address = document.getElementById("ip-address");
     ip_address.textContent = ip_input;
 
+    // The variable that represents the request url for the ip addresse
     var ipRequestURL = `${GEO_URI}${GEO_VERSION}?apiKey=${SECRET_KEY}&ipAddress=${ip_input}`;
     fetch(ipRequestURL)
         .then(results => results.json())
@@ -49,9 +51,11 @@ function getIP() {
             ip_lat = data.location.lat;
             ip_lng = data.location.lng;
 
+            // Initializes the location marker in black, and sets the view to the user selected location latitude and longitude
             var marker = L.marker([ip_lat, ip_lng], {icon:leafletIcon}, 13);
             marker.addTo(mymap);
             mymap.setView(new L.LatLng(ip_lat, ip_lng), 13);
         })
+        // Catches any errors in IP address entry
         .catch(error => alert("Please enter a valid IP Address."));
 }
